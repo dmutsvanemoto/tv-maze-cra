@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { useParams } from "react-router-dom";
 import useFetchTVMazeShowApi from "../../hooks/useFetchTVMazeShowApi";
-import Container from "@material-ui/core/Container";
+import Show from "../../components/Show/Show";
 
 type ShowPageParams = {
   id: string;
@@ -15,7 +15,7 @@ export const ShowPage: FC = () => {
 
   if (isError) return <>Failed to load show...</>;
 
-  if (data) return <Container maxWidth="lg">{JSON.stringify(data)}</Container>;
+  if (data) return <Show {...data} />;
 
   return <>Oops, something went wrong!</>;
 };
