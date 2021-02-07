@@ -22,7 +22,7 @@ const useFetchTVMazeShowsApi = (): IUseFetchTVMazeShowsApi => {
       const source = CancelToken.source();
 
       try {
-        const response = await axios.get<any[]>(
+        const response = await axios.get<ShowEpisode[]>(
           `http://api.tvmaze.com/schedule`,
           { cancelToken: source.token }
         );
