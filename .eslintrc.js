@@ -11,4 +11,18 @@ module.exports = {
     es6: true,
     jest: true,
   },
+  rules: {
+    "react/jsx-filename-extension": [1, { extensions: [".jsx", ".tsx"] }],
+  },
+  settings: {
+    react: {
+      version: "detect",
+    },
+    "import/resolver": {
+      node: {
+        paths: ["src"],
+        extensions: [".ts", ".tsx"],
+      },
+    },
+  },
 };
