@@ -1,5 +1,6 @@
+import React from "react";
 import { render, screen } from "@testing-library/react";
-import HomePageConstants from "../../constants/HomePage.constants";
+import { HomePageConstants } from "../../constants/HomePage.constants";
 import { HomeBanner } from "./HomeBanner";
 
 describe("HomeBanner", () => {

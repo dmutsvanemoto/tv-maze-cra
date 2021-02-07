@@ -1,5 +1,6 @@
-import { render, screen, waitFor } from "@testing-library/react";
-import ShowEpisode from "../../interfaces/ShowEpisode";
+import React from "react";
+import { render, screen } from "@testing-library/react";
+import { ShowEpisode } from "../../interfaces/ShowEpisode";
 import { LatestAddedShows } from "./LatestAddedShows";
 
 const episodes: ShowEpisode[] = [
