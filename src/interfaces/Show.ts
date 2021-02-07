@@ -25,7 +25,7 @@ export interface Show {
   image: Image;
   summary: string;
   updated: number;
-  _links: Links;
+  _links?: Links;
 }
 
 export default Show;
