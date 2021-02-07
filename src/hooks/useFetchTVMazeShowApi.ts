@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import Show from "../interfaces/Show";
+import { Show } from "../interfaces/Show";
 
 export interface IUseFetchTVMazeShowApi {
   data?: Show;
@@ -18,7 +18,7 @@ const useFetchTVMazeShowApi = (showId: number): IUseFetchTVMazeShowApi => {
       setIsError(false);
       setIsLoading(true);
 
-      const CancelToken = axios.CancelToken;
+      const { CancelToken } = axios;
       const source = CancelToken.source();
 
       try {

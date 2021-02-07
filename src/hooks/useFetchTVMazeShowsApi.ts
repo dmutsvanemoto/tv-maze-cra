@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import ShowEpisode from "../interfaces/ShowEpisode";
+import { ShowEpisode } from "../interfaces/ShowEpisode";
 
 export interface IUseFetchTVMazeShowsApi {
   data?: ShowEpisode[];
@@ -18,7 +18,7 @@ const useFetchTVMazeShowsApi = (): IUseFetchTVMazeShowsApi => {
       setIsError(false);
       setIsLoading(true);
 
-      const CancelToken = axios.CancelToken;
+      const { CancelToken } = axios;
       const source = CancelToken.source();
 
       try {
@@ -36,7 +36,6 @@ const useFetchTVMazeShowsApi = (): IUseFetchTVMazeShowsApi => {
     };
 
     fetchData();
-    return () => {};
   }, []);
 
   return { data, isLoading, isError };

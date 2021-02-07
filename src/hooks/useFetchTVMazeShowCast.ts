@@ -18,7 +18,7 @@ const useFetchTVMazeShowCast = (showId: number): IUseFetchTVMazeShowApi => {
       setIsError(false);
       setIsLoading(true);
 
-      const CancelToken = axios.CancelToken;
+      const { CancelToken } = axios;
       const source = CancelToken.source();
 
       try {
