@@ -9,48 +9,29 @@ describe("HomePage", () => {
   beforeEach(() => {
     mockAxios
       .onGet("http://api.tvmaze.com/schedule")
-      .reply(200, [{ id: 1, name: "a tv show name" }]);
+      .reply(200, [
+        {
+          id: 200,
+          name: "an episode name",
+          show: { id: 120, name: "show name", rating: { average: 9.8 } },
+        },
+      ]);
   });
   afterEach(() => {
     mockAxios.reset();
   });
 
-  test("renders HomePage title", async () => {
+  test("renders HomeBanner", async () => {
     render(<HomePage />);
-    const component = await waitFor(() => screen.getByText(/TV Bland/i));
+    const component = await waitFor(() => screen.getByTestId("homebanner"));
     expect(component).toBeInTheDocument();
   });
 
-  test("renders HomePage description", async () => {
+  test("render episodes container", async () => {
     render(<HomePage />);
     const component = await waitFor(() =>
-      screen.getByText(/web series database/i)
+      screen.getByTestId("latestaddedshows-container")
     );
     expect(component).toBeInTheDocument();
-  });
-
-  test("renders HomePage subtitle", async () => {
-    render(<HomePage />);
-    const component = await waitFor(() =>
-      screen.getByText(/Latest Added Shows/i)
-    );
-    expect(component).toBeInTheDocument();
-  });
-
-  test("loads with shows", async () => {
-    render(<HomePage />);
-    const component = await waitFor(() =>
-      screen.getByTestId("shows-container")
-    );
-    expect(component).toBeInTheDocument();
-  });
-
-  test("loads with no shows", async () => {
-    mockAxios.onGet("http://api.tvmaze.com/schedule").reply(200, []);
-    render(<HomePage />);
-    const component = await waitFor(() =>
-      screen.getByTestId("shows-container")
-    );
-    expect(component.hasChildNodes()).toBe(false);
   });
 });

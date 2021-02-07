@@ -25,10 +25,10 @@ export const LatestAddedShows: FC<LatestAddedShowsProps> = ({ episodes }) => {
   const classes = useStyles();
 
   return (
-    <div data-testid="latestshows" className={classes.root}>
+    <div data-testid="latestaddedshows-container" className={classes.root}>
       <LatestAddedShowTitle />
 
-      <Grid container spacing={3}>
+      <Grid container spacing={3} data-testid="episodes-container">
         {!episodes && <LatestAddedShowPending />}
         {episodes?.map((episode) => (
           <LatestAddedShow key={episode.id} episode={episode} />

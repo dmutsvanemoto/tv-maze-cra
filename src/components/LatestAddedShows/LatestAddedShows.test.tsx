@@ -75,7 +75,7 @@ const episodes: ShowEpisode[] = [
 describe("LatestShow", () => {
   test("renders LatestShow", () => {
     render(<LatestAddedShows />);
-    const component = screen.getByTestId("latestshows");
+    const component = screen.getByTestId("latestaddedshows-container");
     expect(component).toBeInTheDocument();
   });
 
