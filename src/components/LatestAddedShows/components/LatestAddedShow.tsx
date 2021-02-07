@@ -20,7 +20,8 @@ const useStyles = makeStyles((theme: Theme) =>
 
 export const LatestAddedShow: FC<LatestAddedShowProps> = ({
   episode: {
-    show: { id, name, rating, image },
+    name,
+    show: { id, name: showName, rating, image },
   },
 }) => {
   const classes = useStyles();
@@ -41,10 +42,10 @@ export const LatestAddedShow: FC<LatestAddedShowProps> = ({
         <CardMedia
           data-testid="latestshowitemimage"
           component="img"
-          alt={name}
+          alt={showName}
           height="150"
           image={image?.original}
-          title={name}
+          title={showName}
         />
         <CardContent data-testid="latestshowitemtitle">
           <ShowRating data-testid="latestshowitemrating" rating={rating} />
