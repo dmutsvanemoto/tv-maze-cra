@@ -10,7 +10,7 @@ export const ShowDetailsPanel: FC<ShowDetailsPanelProps> = ({
   genres,
 }) => {
   return (
-    <Grid container md={6}>
+    <Grid container>
       <ShowDetailsPanelItem label="Stream on" text={streamOn} />
       <ShowDetailsPanelItem label="Schedule" text={schedule?.days.join(",")} />
       <ShowDetailsPanelItem label="Status" text={status} />

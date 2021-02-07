@@ -5,9 +5,13 @@ import { ShowCastInfoItem } from "./ShowCastInfoItem";
 
 export const ShowCastInfo: FC<ShowCastInfoProps> = ({ cast }) => {
   return (
-    <Grid container md={6}>
+    <Grid container>
       {cast?.map(({ person, character }) => (
-        <ShowCastInfoItem person={person} character={character} />
+        <ShowCastInfoItem
+          key={person.id}
+          person={person}
+          character={character}
+        />
       ))}
     </Grid>
   );

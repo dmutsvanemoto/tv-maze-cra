@@ -1,23 +1,6 @@
 import React, { FC } from "react";
-import {
-  // Theme,
-  // createStyles,
-  // makeStyles,
-  ListItem,
-  ListItemText,
-} from "@material-ui/core";
-
+import { Grid, Typography } from "@material-ui/core";
 import { ShowDetailsPanelItemProps } from "../types/ShowDetailsPanelItemProps";
-
-// const useStyles = makeStyles((theme: Theme) =>
-//   createStyles({
-//     root: {
-//       width: "100%",
-//       maxWidth: 360,
-//       backgroundColor: theme.palette.background.paper,
-//     },
-//   })
-// );
 
 export const ShowDetailsPanelItem: FC<ShowDetailsPanelItemProps> = ({
   label,
@@ -25,12 +8,14 @@ export const ShowDetailsPanelItem: FC<ShowDetailsPanelItemProps> = ({
 }) => {
   // const classes = useStyles();
   return (
-    <ListItem>
-      <ListItemText
-        primary={label}
-        secondary={<ListItemText primary={text} />}
-      />
-    </ListItem>
+    <Grid item xs={6} md={12}>
+      <Typography variant="h6" gutterBottom>
+        {label}
+      </Typography>
+      <Typography variant="subtitle1" gutterBottom>
+        {text}
+      </Typography>
+    </Grid>
   );
 };
 
