@@ -1,7 +1,7 @@
 import { Links } from "./Links";
 import { Show } from "./Show";
 
-export interface ShowSchedule {
+export interface ShowEpisode {
   id: number;
   url: string;
   name: string;
@@ -10,12 +10,12 @@ export interface ShowSchedule {
   type: string;
   airdate: string;
   airtime: string;
-  airstamp: Date;
+  airstamp: string;
   runtime: number;
   image?: any;
   summary?: any;
   show: Show;
-  _links: Links;
+  _links?: Links;
 }
 
-export default ShowSchedule;
+export default ShowEpisode;
