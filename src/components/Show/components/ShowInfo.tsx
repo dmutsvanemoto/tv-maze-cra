@@ -8,7 +8,7 @@ export const ShowInfo: FC<ShowInfoProps> = ({
   schedule,
   status,
   genres,
-  characters,
+  cast,
 }) => {
   return (
     <>
@@ -18,7 +18,7 @@ export const ShowInfo: FC<ShowInfoProps> = ({
         status={status}
         genres={genres}
       />
-      <ShowCastInfo characters={characters} />
+      <ShowCastInfo cast={cast} />
     </>
   );
 };

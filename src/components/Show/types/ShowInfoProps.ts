@@ -1,3 +1,4 @@
+import ShowCast from "../../../interfaces/ShowCast";
 import { Schedule } from "../../../interfaces/Schedule";
 
 export type ShowInfoProps = {
@@ -5,5 +6,5 @@ export type ShowInfoProps = {
   schedule: Schedule;
   status?: string;
   genres: string[];
-  characters?: any[];
+  cast?: ShowCast[];
 };

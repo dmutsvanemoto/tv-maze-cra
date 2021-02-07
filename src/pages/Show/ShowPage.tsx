@@ -2,7 +2,7 @@ import React, { FC } from "react";
 import { useParams } from "react-router-dom";
 import useFetchTVMazeShowApi from "../../hooks/useFetchTVMazeShowApi";
 import useFetchTVMazeShowCast from "../../hooks/useFetchTVMazeShowCast";
-import Show from "../../components/Show/Show";
+import { Show } from "../../components/Show/Show";
 
 type ShowPageParams = {
   id: string;

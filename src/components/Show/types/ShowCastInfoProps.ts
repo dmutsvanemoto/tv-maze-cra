@@ -1,3 +1,5 @@
+import ShowCast from "../../../interfaces/ShowCast";
+
 export type ShowCastInfoProps = {
-  characters?: any[];
+  cast?: ShowCast[];
 };

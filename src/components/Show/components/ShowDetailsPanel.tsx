@@ -1,4 +1,5 @@
 import React, { FC } from "react";
+import { Grid } from "@material-ui/core";
 import { ShowDetailsPanelProps } from "../types/ShowDetailsPanelProps";
 import { ShowDetailsPanelItem } from "./ShowDetailsPanelItem";
 
@@ -9,12 +10,12 @@ export const ShowDetailsPanel: FC<ShowDetailsPanelProps> = ({
   genres,
 }) => {
   return (
-    <div>
+    <Grid container md={6}>
       <ShowDetailsPanelItem label="Stream on" text={streamOn} />
       <ShowDetailsPanelItem label="Schedule" text={schedule?.days.join(",")} />
       <ShowDetailsPanelItem label="Status" text={status} />
       <ShowDetailsPanelItem label="Genres" text={genres.join(",")} />
-    </div>
+    </Grid>
   );
 };
 

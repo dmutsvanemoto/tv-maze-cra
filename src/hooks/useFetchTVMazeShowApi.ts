@@ -36,7 +36,6 @@ const useFetchTVMazeShowApi = (showId: number): IUseFetchTVMazeShowApi => {
     };
 
     fetchData();
-    return () => {};
   }, [showId]);
 
   return { data, isLoading, isError };

@@ -1,14 +1,15 @@
 import React, { FC } from "react";
+import { Grid } from "@material-ui/core";
 import { ShowCastInfoProps } from "../types/ShowCastInfoProps";
 import { ShowCastInfoItem } from "./ShowCastInfoItem";
 
-export const ShowCastInfo: FC<ShowCastInfoProps> = ({ characters = [] }) => {
+export const ShowCastInfo: FC<ShowCastInfoProps> = ({ cast }) => {
   return (
-    <>
-      {characters.map((item) => (
-        <ShowCastInfoItem {...item} />
+    <Grid container md={6}>
+      {cast?.map(({ person, character }) => (
+        <ShowCastInfoItem person={person} character={character} />
       ))}
-    </>
+    </Grid>
   );
 };
 

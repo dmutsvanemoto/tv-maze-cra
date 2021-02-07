@@ -1,5 +1,7 @@
+import { Character } from "../../../interfaces/ShowCast/Character";
+import { Person } from "../../../interfaces/ShowCast/Person";
+
 export type ShowCastIntoItemProps = {
-  showId?: number;
-  name: string;
-  actor?: any;
+  person: Person;
+  character: Character;
 };
