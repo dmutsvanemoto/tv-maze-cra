@@ -1,6 +1,6 @@
-import { FC } from "react";
+import React, { FC } from "react";
+import { Typography } from "@material-ui/core";
 import { TitleProps } from "../types/TitleProps";
-import Typography from "@material-ui/core/Typography";
 
 export const Title: FC<TitleProps> = ({ title }) => {
   return (
@@ -15,3 +15,5 @@ export const Title: FC<TitleProps> = ({ title }) => {
     </Typography>
   );
 };
+
+export default Title;

@@ -1,7 +1,7 @@
-import { FC } from "react";
-import { ShowRatingProps } from "../types/ShowRatingProps";
-import Box from "@material-ui/core/Box";
-import Rating from "@material-ui/lab/Rating";
+import React, { FC } from "react";
+import { Box } from "@material-ui/core";
+import { Rating } from "@material-ui/lab";
+import { ShowRatingProps } from "./types/ShowRatingProps";
 
 export const ShowRating: FC<ShowRatingProps> = ({ rating: { average } }) => {
   return (
@@ -15,3 +15,5 @@ export const ShowRating: FC<ShowRatingProps> = ({ rating: { average } }) => {
     </Box>
   );
 };
+
+export default ShowRating;

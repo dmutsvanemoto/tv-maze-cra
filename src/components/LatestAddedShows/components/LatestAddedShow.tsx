@@ -1,16 +1,19 @@
-import { FC } from "react";
+import React, { FC } from "react";
 import { useHistory } from "react-router-dom";
-import { ShowRating } from "../../ShowRating/ShowRating";
-import { LatestAddedShowProps } from "../types/LatestAddedShowProps";
-import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
-import Card from "@material-ui/core/Card";
-import CardMedia from "@material-ui/core/CardMedia";
-import CardContent from "@material-ui/core/CardContent";
-import Grid from "@material-ui/core/Grid";
-import Typography from "@material-ui/core/Typography";
-import Hidden from "@material-ui/core/Hidden";
+import {
+  makeStyles,
+  createStyles,
+  Card,
+  CardMedia,
+  CardContent,
+  Grid,
+  Typography,
+} from "@material-ui/core";
 
-const useStyles = makeStyles((theme: Theme) =>
+import { LatestAddedShowProps } from "../types/LatestAddedShowProps";
+import { ShowRating } from "../../ShowRating/ShowRating";
+
+const useStyles = makeStyles(() =>
   createStyles({
     root: {
       maxWidth: 345,
@@ -25,7 +28,7 @@ export const LatestAddedShow: FC<LatestAddedShowProps> = ({
   },
 }) => {
   const classes = useStyles();
-  let history = useHistory();
+  const history = useHistory();
   const handleOnClick = () => {
     history.push(`/shows/${id}`);
   };
@@ -57,3 +60,5 @@ export const LatestAddedShow: FC<LatestAddedShowProps> = ({
     </Grid>
   );
 };
+
+export default LatestAddedShow;

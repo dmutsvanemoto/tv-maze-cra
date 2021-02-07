@@ -1,12 +1,9 @@
-import { FC } from "react";
+import React, { FC } from "react";
+import { makeStyles, createStyles, Theme, Grid } from "@material-ui/core";
 import { LatestAddedShowsProps } from "./types/LatestAddedShowsProps";
 import { LatestAddedShowTitle } from "./components/LatestAddedShowTitle";
 import { LatestAddedShowPending } from "./components/LatestAddedShowPending";
 import { LatestAddedShow } from "./components/LatestAddedShow";
-
-import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
-import Paper from "@material-ui/core/Paper";
-import Grid from "@material-ui/core/Grid";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -37,3 +34,5 @@ export const LatestAddedShows: FC<LatestAddedShowsProps> = ({ episodes }) => {
     </div>
   );
 };
+
+export default LatestAddedShows;

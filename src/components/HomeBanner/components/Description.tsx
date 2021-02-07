@@ -1,6 +1,6 @@
-import { FC } from "react";
+import React, { FC } from "react";
+import { Typography } from "@material-ui/core";
 import { HomeBannerDescriptionProps } from "../types/HomeBannerDescriptionProps";
-import Typography from "@material-ui/core/Typography";
 
 export const Description: FC<HomeBannerDescriptionProps> = ({
   description,
@@ -16,3 +16,5 @@ export const Description: FC<HomeBannerDescriptionProps> = ({
     </Typography>
   );
 };
+
+export default Description;

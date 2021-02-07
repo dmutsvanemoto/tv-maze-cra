@@ -1,6 +1,5 @@
-import { FC } from "react";
-import Paper from "@material-ui/core/Paper";
-import Grid from "@material-ui/core/Grid";
+import React, { FC } from "react";
+import { Paper, Grid } from "@material-ui/core";
 import { HomeBannerProps } from "./types/HomeBannerProps";
 import { Title } from "./components/Title";
 import { Description } from "./components/Description";
@@ -23,3 +22,5 @@ export const HomeBanner: FC<HomeBannerProps> = ({ title, description }) => {
     </Paper>
   );
 };
+
+export default HomeBanner;

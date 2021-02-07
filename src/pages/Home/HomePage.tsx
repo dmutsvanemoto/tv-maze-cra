@@ -1,13 +1,11 @@
-import { FC } from "react";
-import Container from "@material-ui/core/Container";
-import HomePageConstants from "../../constants/HomePage.constants";
+import React, { FC } from "react";
+import { Container } from "@material-ui/core";
+import { HomePageConstants } from "../../constants/HomePage.constants";
 import { HomeBanner } from "../../components/HomeBanner/HomeBanner";
 import { LatestAddedShows } from "../../components/LatestAddedShows/LatestAddedShows";
 import useFetchTVMazeShowsApi from "../../hooks/useFetchTVMazeShowsApi";
 
-export type HomePageProps = {};
-
-export const HomePage: FC<HomePageProps> = () => {
+export const HomePage: FC = () => {
   const { data, isLoading, isError } = useFetchTVMazeShowsApi();
 
   return (
@@ -24,3 +22,5 @@ export const HomePage: FC<HomePageProps> = () => {
     </Container>
   );
 };
+
+export default HomePage;
