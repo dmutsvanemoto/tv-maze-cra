@@ -1,8 +1,15 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
+import ShowEpisode from "../interfaces/ShowEpisode";
 
-const useFetchTVMazeShowsApi = () => {
-  const [data, setData] = useState<any[] | null>(null);
+export interface IUseFetchTVMazeShowsApi {
+  data?: ShowEpisode[];
+  isLoading: boolean;
+  isError: boolean;
+}
+
+const useFetchTVMazeShowsApi = (): IUseFetchTVMazeShowsApi => {
+  const [data, setData] = useState<ShowEpisode[]>();
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
 
